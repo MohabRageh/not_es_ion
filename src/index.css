@@ -1,4 +1,13 @@
+:root {
+  --Padding :1.2rem;
+  --Border: 2px solid black;
+  --BGColor:rgba(250, 250, 250, 0.357);
+  --TxtShadow:0px 0px 5px white;
+  
+}
 body {
+  background-image: url("imgs/backgroundimg.avif");
+  background-size: cover;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -6,8 +15,116 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.App{
+  display: grid;
+  grid-template-areas: 
+  ". c c c c c"
+  "a m m m m m "
+  ;
+}
+.line_through{
+  text-decoration: line-through;
+}
+aside::-webkit-scrollbar {
+  width: 1px;
+}
+aside{
+  background-color: var(--BGColor);
+  position: relative;
+  grid-area: a;
+  border: var(--Border);
+  height: 95vh;
+  overflow: scroll;
+  overflow-x:hidden;
+  
+}
+aside ul{
+  margin: 0;
+  padding: 0;
+}
+aside  li{
+  border-bottom: var(--Border);
+  padding: 20px;
+  text-shadow: var(--TxtShadow);
+  color: white;
+  font-size:clamp(1rem,2vw,3rem)
+}
+aside ul li:first-child{
+  margin-top: -40px;
+}
+aside svg{
+  background-color: aliceblue;
+  border: var(--Border);
+  padding: 5px;
+  position: absolute;
+  position: sticky;
+  left: 100%;
+  top: 5px;
+  font-size:clamp(.1rem,1vw,3rem)
+}
+main{
+  background-color: var(--BGColor);
+  grid-area: m;
+  border: var(--Border);
+  text-shadow: var(--TxtShadow);
+  font-size:clamp(1rem,2vw,3rem);
+  margin-left: 20PX;
+  padding: 2rem;
+}
+main li{
+  list-style-type: none;
+}
+main input{
+  display: inline-block;
+  font-size:clamp(.5rem,1vw,3rem);
+  border-radius: 20px;
+  padding: 1rem;
+  
+}
+main div{
+  display: flex;
+  align-items: center;
+}
+main input:nth-child(even){
+  flex-grow: 1;
+  margin-left: 10px;
+}
+main input:nth-child(odd){
+  width: 50px;
+  height: 50px;
+}
+.components_picker{
+  grid-area: c;
+  margin-left: 20px;
+  background-color: var(--BGColor);
+}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.components_picker ul{
+  padding: 0;
+  margin: 0;
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  
+}
+.components_picker li{
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  
+}
+.components_picker button{
+  padding: 1rem;
+  font-size:clamp(.5rem,1vw,1rem);
+  display: grid;
+  place-content: center;
+  width: 100%;
+  text-shadow: var(--TxtShadow);
+  
+  background-color: var(--BGColor);
+}
+.selected{
+  background-color: aliceblue;
+  color: #000;
+  text-shadow: 0px 0px 5px black;
 }
