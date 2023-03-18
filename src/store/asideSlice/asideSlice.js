@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
     Pages:[],
-    Selected:-1
+    Selected:-1,
+    isAwake:false
 }
 export const asideSlice=createSlice(
     {
@@ -36,10 +37,13 @@ export const asideSlice=createSlice(
                     state.Pages[selected].components[currentComponent]=
                     {...state.Pages[selected].components[currentComponent],checked:!state.Pages[selected].components[currentComponent].checked}
                 }
+            },
+            awake:(state)=>{
+                state.isAwake=!state.isAwake
             }
     }
 }
 )
 
-export const {addPage,setSelect,addItem,editItem} =asideSlice.actions
+export const {addPage,setSelect,addItem,editItem,awake} =asideSlice.actions
 export default asideSlice.reducer

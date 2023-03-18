@@ -15,7 +15,7 @@ export default function ComponentsPicker() {
         </li>
         <li>
         <button
-            onClick={()=>{selected>=0?dispatch( addItem ( {type:"text",value:""} ) ):console.log()}}
+            onClick={()=>{selected>=0?dispatch( addItem ( {type:"text",value:"drag me to grow => on my bottom right"} ) ):console.log()}}
           >Text</button>
         </li>
         <li>

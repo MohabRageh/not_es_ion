@@ -7,13 +7,14 @@
 }
 body {
   background-image: url("imgs/backgroundimg.avif");
-  background-size: contain;
+  background-size: cover;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  max-width: 100%;
 }
 .App{
   display: grid;
@@ -22,13 +23,19 @@ body {
   grid-template-areas: 
   "a c c c c c"
   "a m m m m m "
+  
   ;
 }
 .line_through{
   text-decoration: line-through;
 }
-aside::-webkit-scrollbar {
-  width: 1px;
+.awake_btn{
+  background-color: rgb(211, 217, 223);
+  width: 50%;
+  height: 3vh;
+}
+aside::-webkit-scrollbar,textarea::-webkit-scrollbar {
+  background-color: rgba(240, 248, 255, 0);
 }
 aside{
   background-color: var(--BGColor);
@@ -51,16 +58,11 @@ aside  li{
   color: white;
   font-size:clamp(.5rem,2vw,3rem)
 }
-aside ul li:first-child{
-  margin-top: -20px;
-}
+
 aside svg{
   background-color: rgba(240, 248, 255, 0.277);
   padding: 5px;
-  position: absolute;
-  position: sticky;
-  left: 100%;
-  top: 5px;
+  width: 100%;
   font-size:clamp(.1rem,1vw,3rem)
 }
 main{
@@ -95,7 +97,7 @@ main input[type="checkbox"]{
 }
 main textarea{
   flex-grow: 1;
-  max-width: 100%;
+  
   font-size:clamp(.5rem,1vw,3rem);
   padding: 1rem;
   border-radius: 20px;
