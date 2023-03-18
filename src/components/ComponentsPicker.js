@@ -14,7 +14,9 @@ export default function ComponentsPicker() {
           >Checkbox</button>
         </li>
         <li>
-          <button>Header</button>
+        <button
+            onClick={()=>{selected>=0?dispatch( addItem ( {type:"text",value:""} ) ):console.log()}}
+          >Text</button>
         </li>
         <li>
           <button>Table</button>

@@ -28,7 +28,7 @@ export const asideSlice=createSlice(
                 const currentComponent=action.payload.index
                 const selected=state.Selected
                 const newValue=action.payload.nValue
-                if(action.payload.itemType==="text")
+                if(action.payload.itemType=== "text"||action.payload.itemType=== "textarea")
                 {
                     state.Pages[selected].components[currentComponent]=
                     {...state.Pages[selected].components[currentComponent],value:newValue}

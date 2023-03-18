@@ -7,7 +7,7 @@
 }
 body {
   background-image: url("imgs/backgroundimg.avif");
-  background-size: cover;
+  background-size: contain;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -17,8 +17,10 @@ body {
 }
 .App{
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 50px 1fr;
   grid-template-areas: 
-  ". c c c c c"
+  "a c c c c c"
   "a m m m m m "
   ;
 }
@@ -30,13 +32,13 @@ aside::-webkit-scrollbar {
 }
 aside{
   background-color: var(--BGColor);
-  position: relative;
+  position: sticky;
   grid-area: a;
   border: var(--Border);
   height: 95vh;
   overflow: scroll;
   overflow-x:hidden;
-  
+  top:0;
 }
 aside ul{
   margin: 0;
@@ -68,35 +70,42 @@ main{
   border: var(--Border);
   text-shadow: var(--TxtShadow);
   font-size:clamp(1rem,2vw,3rem);
-  margin-left: 20PX;
+  margin-left: 20px;
   padding: 2rem;
 }
 main li{
   list-style-type: none;
 }
 main input{
-  display: inline-block;
   font-size:clamp(.5rem,1vw,3rem);
   border-radius: 20px;
   padding: 1rem;
-  
 }
 main div{
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
-main input:nth-child(even){
+main input[type="text"]{
   flex-grow: 1;
   margin-left: 10px;
 }
-main input:nth-child(odd){
+main input[type="checkbox"]{
   width: 2Vh;
   height: 2Vh;
+}
+main textarea{
+  flex-grow: 1;
+  max-width: 100%;
+  font-size:clamp(.5rem,1vw,3rem);
+  padding: 1rem;
+  border-radius: 20px;
 }
 .components_picker{
   grid-area: c;
   margin-left: 20px;
   background-color: var(--BGColor);
+  
 }
 
 .components_picker ul{
@@ -120,7 +129,6 @@ main input:nth-child(odd){
   place-content: center;
   width: 100%;
   text-shadow: var(--TxtShadow);
-  
   background-color: var(--BGColor);
 }
 .selected{

@@ -10,9 +10,6 @@ export default function Main() {
       const type=event.target.type
       const indexx=Number(event.target.name)
       dispatch(editItem({index:indexx,nValue:event.target.value,itemType:type}))  
-      
-      
-      
   }
   return (
     <main>
@@ -26,10 +23,14 @@ export default function Main() {
                 <li key={ind}>
                   <div>
                     <input type='checkbox' name={ind} checked={pages[selected].components.length?pages[selected].components[ind].checked:""} onChange={handleChange}/> 
-                    <input type="text" className={pages[selected].components[ind].checked?"line_through":""} value={pages[selected].components.length?pages[selected].components[ind].value:""} name={ind} onChange={handleChange}/>
+                    <input type="text" className={pages[selected].components[ind].checked?"line_through":"" } value={pages[selected].components.length?pages[selected].components[ind].value:""} name={ind} onChange={handleChange}/>
                   </div>
                 </li>
-                :""
+                :component.type==="text"?<li key={ind}>
+                <div>
+                  <textarea  value={pages[selected].components.length?pages[selected].components[ind].value:""} name={ind} onChange={handleChange}></textarea>
+                </div>
+              </li>:""
               }
             )
             )
