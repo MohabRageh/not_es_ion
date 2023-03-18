@@ -46,17 +46,16 @@ aside ul{
 }
 aside  li{
   border-bottom: var(--Border);
-  padding: 20px;
+  padding: 5px;
   text-shadow: var(--TxtShadow);
   color: white;
-  font-size:clamp(1rem,2vw,3rem)
+  font-size:clamp(.5rem,2vw,3rem)
 }
 aside ul li:first-child{
-  margin-top: -40px;
+  margin-top: -20px;
 }
 aside svg{
-  background-color: aliceblue;
-  border: var(--Border);
+  background-color: rgba(240, 248, 255, 0.277);
   padding: 5px;
   position: absolute;
   position: sticky;
