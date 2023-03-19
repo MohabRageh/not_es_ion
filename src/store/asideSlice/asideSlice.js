@@ -12,7 +12,7 @@ export const asideSlice=createSlice(
         reducers:{
             addPage:(state)=>{state.Pages.push(
                 {
-                    name:`Page ${state.Pages.length+1}`,
+                    name:`Day${state.Pages.length+1}`,
                     components:[]
                 }
                 )},

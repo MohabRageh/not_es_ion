@@ -6,15 +6,13 @@ import { useDispatch } from "react-redux/es/hooks/useDispatch";
 
 export default function Aside() {
     const isAwake=useSelector(state=>state.asidePages.isAwake)
-    const dispatch=useDispatch()
     const pages=useSelector(state=>state.asidePages.Pages)
     const selected=useSelector(state=>state.asidePages.Selected)
+    const dispatch=useDispatch()
   return (
     <>
-    {/* {!isAwake?<FaBars className='awake_btn' onClick={()=>dispatch(awake())} />:"" } */}
-    {isAwake?<aside>
+    {<aside className={isAwake?"width300":""}>
         <ul>
-        {/* <FaBars className='awake_btn' onClick={()=>dispatch(awake())} /> */}
             {
                 pages.length===0?<li>none</li>:
                 pages.map(
@@ -28,7 +26,7 @@ export default function Aside() {
             }
         </ul>
         <FaPlus onClick={()=>dispatch(addPage())}/>
-    </aside>:""}
+    </aside>}
     </>
   )
 }

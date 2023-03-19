@@ -6,13 +6,14 @@ export default function Main() {
   const dispatch=useDispatch()
   const selected=useSelector(state=>state.asidePages.Selected)
   const pages=useSelector(state=>state.asidePages.Pages)
+  const isAwake=useSelector(state=>state.asidePages.isAwake)
   const handleChange=(event)=>{
       const type=event.target.type
       const indexx=Number(event.target.name)
       dispatch(editItem({index:indexx,nValue:event.target.value,itemType:type}))  
   }
   return (
-    <main>
+    <main className={isAwake?"margin_left":""}>
         {
           selected>=0?(
             pages[selected].components.map(
